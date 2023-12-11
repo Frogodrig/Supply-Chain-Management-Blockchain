@@ -1,5 +1,12 @@
 // Import web3.js
 const { Web3 } = require('web3');
+const express = require('express');
+const  authRoutes  = require('./routes/authRoutes')
+const  userRoutes  = require('./routes/authRoutes')
+const  productRoutes  = require('./routes/authRoutes')
+
+
+const app = express();
 
 // Setup web3 instance with a provider
 const web3 = new Web3('http://localhost:8545');
@@ -903,9 +910,18 @@ const productscontract = new web3.eth.Contract(productcontractABI, contractAddre
 const supplychaincontract = new web3.eth.Contract(SupplyChainABI, supplychainaddress );
 const Userscontract = new web3.eth.Contract(UsersABI, usersAddress );
 
+app.use('/auth',authRoutes );
+app.use('/user',userRoutes );
+app.use('/products',productRoutes );
+
 console.log(productscontract.methods);
 console.log(supplychaincontract.methods);
 console.log(Userscontract.methods);
 
+const PORT = 8000
 
+app.listen(PORT, function(err){
+    if (err) console.log("Error in server setup")
+    console.log("Server listening on Port", PORT);
+})
   
