@@ -6,8 +6,12 @@ const {
   } = require("../controllers/user")
   
   //Routes
-  router.get("/getMyDetails", getMyDetails)
-  router.get("/getUserDetails", getUserDetails)
+  router.get("/getMyDetails", ()=>{
+    getMyDetails
+  })
+  router.get("/getUserDetails", ()=>{
+    getUserDetails
+  })
   
   module.exports = router
   

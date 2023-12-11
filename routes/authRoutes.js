@@ -6,8 +6,12 @@ sellProduct
   } = require("../controllers/auth")
   
   //Routes
-  router.post("/addParty", addParty)
-  router.post("/sellProduct", sellProduct)
+  router.post("/addParty", () => {
+    addParty
+  })
+  router.post("/sellProduct", ()=>{
+    sellProduct
+  })
   
   module.exports = router
   

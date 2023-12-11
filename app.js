@@ -915,7 +915,7 @@ app.use('/user',userRoutes );
 app.use('/products',productRoutes );
 
 console.log(productscontract.methods);
-console.log(supplychaincontract.methods);
+//console.log(supplychaincontract.methods);
 console.log(Userscontract.methods);
 
 const PORT = 8000
