@@ -9,7 +9,7 @@ exports.addProduct = async (req, res) => {
       name, manufacturerName, manufacturer, manDateEpoch, expDateEpoch, isInBatch, batchCount, barcodeId, productImage, productType, scientificName, usage, composition, sideEffects
     };
     const currentTime = '';
-    const result = await supplychaincontract.methods.addProduct(product, currentTime).send({ from: 'YOUR_WALLET_ADDRESS' });
+    const result = await supplychaincontract.methods.addProduct(product, currentTime).send({ from: '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266' });
     res.send(result);
   } catch (error) {
     res.status(500).send(error.toString());
