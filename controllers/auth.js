@@ -7,7 +7,8 @@ exports.addParty = async (req, res) => {
     const { role, id_, name, email } = req.body;
     const user = { role, id_, name, email };
     const result = await supplychaincontract.methods.addParty(user).send({ from: '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80' });
-    res.json(result);
+    res.status(200).json(result);
+    
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

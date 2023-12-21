@@ -910,13 +910,21 @@ const productscontract = new web3.eth.Contract(productcontractABI, contractAddre
 const supplychaincontract = new web3.eth.Contract(SupplyChainABI, supplychainaddress );
 const Userscontract = new web3.eth.Contract(UsersABI, usersAddress );
 
+
+
 app.use('/auth',authRoutes );
 app.use('/user',userRoutes );
 app.use('/products',productRoutes );
 
 console.log(productscontract.methods);
-//console.log(supplychaincontract.methods);
+console.log(supplychaincontract.methods);
 console.log(Userscontract.methods);
+
+module.exports = { supplychaincontract };
+module.exports = { productRoutes };
+module.exports = { Userscontract };
+
+
 
 const PORT = 8000
 
